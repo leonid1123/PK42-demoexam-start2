@@ -1,11 +1,17 @@
-import mysql.connector
+#USE PyMySQL!!!
+import pymysql.cursors
 
 class Db:
     def __init__(self):
-        self.cnx = mysql.connector.connect(
+        try:
+            self.cnx = pymysql.connect(
             host="localhost",
-            user='pk-42',
+            user='pk42',
             password='1234',
-            database='pupsik64'
-        )
-        self.cur = self.cnx.cursor()
+            database='demo_pk42_new'
+            )
+            self.cur = self.cnx.cursor()
+        except pymysql.Error as e:
+            print("Ошибка БД", e)
+            self.cnx = None
+            self.cur = None

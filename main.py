@@ -1,3 +1,4 @@
+#https://github.com/leonid1123/PK42-demoexam-start2
 import sys
 from PyQt6.QtWidgets import QApplication, QWidget, QMainWindow,\
 QGridLayout, QLabel, QLineEdit, QPushButton

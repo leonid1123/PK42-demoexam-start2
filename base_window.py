@@ -32,6 +32,3 @@ class BaseWindow(QWidget):
             self.goods_lst.addItem(tmp_str)
             ans = self.db.cur.fetchone()
         
-
-
-

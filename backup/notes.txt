@@ -1,0 +1,2 @@
+self.list_widget.item(0).setForeground(QColor("red"))  # Change text color to red
+self.list_widget.item(1).setBackground(QColor("yellow"))  # Change background color to yellow

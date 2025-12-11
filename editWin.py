@@ -1,18 +1,19 @@
+from typing import Any
 from PyQt6.QtWidgets import QWidget,\
 QGridLayout, QLabel, QLineEdit, QPushButton,\
 QListWidget
 from PyQt6.QtCore import pyqtSlot
 
-class MainWindow(QWidget):
+class EditWindow(QWidget):
     """Класс окна для редактирования и добавления товаров"""
-    def __init__(self, *args, **kwargs):
+    def __init__(self, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
         self.setWindowTitle("Редактирование")
         self.layout = QGridLayout()
         self.setLayout(self.layout)
         self.set_ui()
 
-    def set_ui(self):
+    def set_ui(self) -> None:
         """метод для создания интерфейса"""
         self.artikul = QLineEdit()
         self.name = QLineEdit()
@@ -53,11 +54,11 @@ class MainWindow(QWidget):
         self.add_btn.clicked.connect(self.add_tovar_slot)
     
     @pyqtSlot()
-    def edit_tovar_slot(self):
+    def edit_tovar_slot(self) -> None:
         """слот для редактирования товара"""
         pass
 
     @pyqtSlot()
-    def add_tovar_slot(self):
+    def add_tovar_slot(self) -> None:
         """слот для добавления товара"""
         pass

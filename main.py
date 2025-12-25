@@ -1,7 +1,6 @@
 from typing import Any
 from PyQt6.QtWidgets import QApplication, QWidget,\
-QFormLayout, QLabel, QLineEdit, QPushButton, QMainWindow, \
-QMessageBox
+QFormLayout, QLineEdit, QPushButton, QMainWindow
 import sys
 from base_win import BaseWindow
 from db_handler import DbHandler

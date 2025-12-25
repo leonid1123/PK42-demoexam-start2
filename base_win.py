@@ -23,3 +23,18 @@ class BaseWindow(QWidget):
         self.sort_up_btn = QPushButton("по убыванию")
         self.sort_down_btn = QPushButton("по возрастанию")
         self.zakaz_btn = QPushButton("заказы")
+        self.add_tovar = QPushButton("добавить товар")
+        layout.addWidget(self.search,0,0,1,2)
+        layout.addWidget(self.sort_up_btn,1,0)
+        layout.addWidget(self.sort_down_btn,1,1)
+        layout.addWidget(self.main_lst,2,0,1,2)
+        layout.addWidget(self.add_tovar,3,0)
+        layout.addWidget(self.zakaz_btn,3,1)
+        if role not in ["Администратор", "Менеджер"]:
+            self.search.setVisible(False)
+            self.sort_down_btn.setVisible(False)
+            self.sort_up_btn.setVisible(False)
+            self.zakaz_btn.setVisible(False)
+            self.add_tovar.setVisible(False)
+        if role == "Администратор":
+            self.add_tovar.setVisible(True)

@@ -10,9 +10,9 @@ class DbHandler:
         """
         self.conn = pymysql.connect(
             host="localhost",
-            user="",
-            password="",
-            database=""
+            user="pk42",
+            password="1234",
+            database="demo_pk42_new"
         )
         self.cur = self.conn.cursor()
 

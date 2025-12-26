@@ -1,13 +1,22 @@
-from typing import Any
-from PyQt6.QtWidgets import QApplication, QWidget,\
-QFormLayout, QLineEdit, QPushButton, QMainWindow
 import sys
+from typing import Any
+
+from PyQt6.QtWidgets import (
+    QApplication,
+    QFormLayout,
+    QLineEdit,
+    QMainWindow,
+    QPushButton,
+    QWidget,
+)
+
 from base_win import BaseWindow
 from db_handler import DbHandler
 
 
 class LoginWindow(QMainWindow):
     """Класс окна для авторизации"""
+
     def __init__(self) -> None:
         super().__init__()
         self.my_db = DbHandler()
@@ -30,7 +39,7 @@ class LoginWindow(QMainWindow):
     def pass_login(self) -> None:
         """метод для входа по логину и паролю"""
         login: str = self.login_input.text()
-        password:str = self.pass_input.text()
+        password: str = self.pass_input.text()
         sql = "SELECT * from user_import WHERE Логин=%s"
         self.my_db.cur.execute(sql, (login,))
         ans: tuple[Any, ...] | None = self.my_db.cur.fetchone()
@@ -47,7 +56,7 @@ class LoginWindow(QMainWindow):
         """метод для гостевого входа"""
         self.bw = BaseWindow("гость", "гость")
         self.bw.show()
-        
+
 
 app = QApplication(sys.argv)
 login_win = LoginWindow()

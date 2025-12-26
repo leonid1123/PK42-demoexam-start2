@@ -1,5 +1,6 @@
 import pymysql.cursors
 
+
 class DbHandler:
     def __init__(self) -> None:
         """
@@ -15,5 +16,3 @@ class DbHandler:
             database="demo_pk42_new"
         )
         self.cur = self.conn.cursor()
-
-
